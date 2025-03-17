@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://buctsmjq081un"]
+
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_vb8mv"]
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vb8mv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 335.0
+offset_right = 412.0
+offset_bottom = 401.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Level select"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit game"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

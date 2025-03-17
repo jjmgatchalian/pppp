@@ -1,0 +1,169 @@
+[gd_scene load_steps=13 format=3 uid="uid://d3i2wyjfkkrqm"]
+
+[ext_resource type="Script" path="res://levels/level1/assets/targetposnlabel.gd" id="1_iggix"]
+[ext_resource type="Script" path="res://levels/level1/assets/Label.gd" id="2_bq3nt"]
+[ext_resource type="Script" path="res://levels/level1/assets/positionlabel.gd" id="3_wefp6"]
+[ext_resource type="Script" path="res://levels/level1/assets/hiddenwhilemoving.gd" id="4_578ul"]
+[ext_resource type="PackedScene" uid="uid://rxx05311txso" path="res://levels/level1/assets/slidersprite.tscn" id="5_epr1s"]
+[ext_resource type="Script" path="res://levels/level1/assets/extradetailslabel.gd" id="6_61dx3"]
+[ext_resource type="Texture2D" uid="uid://b36thts4f7yyi" path="res://levels/level1/assets/icon.svg" id="7_s6evp"]
+[ext_resource type="Script" path="res://levels/level1/assets/Button.gd" id="8_s3jsi"]
+[ext_resource type="Script" path="res://levels/level1/assets/help.gd" id="9_d1dt5"]
+[ext_resource type="Script" path="res://levels/level1/assets/helpmenu.gd" id="10_kxqju"]
+[ext_resource type="Script" path="res://levels/level1/assets/wincon.gd" id="11_5w60s"]
+[ext_resource type="Script" path="res://levels/level1/assets/winstate.gd" id="12_t50sm"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_top = 372.0
+offset_right = 206.0
+offset_bottom = 481.0
+color = Color(0, 0, 0, 0.705882)
+
+[node name="targetposnlabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 33.0
+script = ExtResource("1_iggix")
+
+[node name="velocitylabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 45.0
+offset_right = 50.0
+offset_bottom = 68.0
+script = ExtResource("2_bq3nt")
+
+[node name="positionlabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 80.0
+offset_right = 50.0
+offset_bottom = 103.0
+script = ExtResource("3_wefp6")
+
+[node name="hiddenwhilemoving" type="Sprite2D" parent="CanvasLayer"]
+script = ExtResource("4_578ul")
+
+[node name="slidersprite" parent="CanvasLayer/hiddenwhilemoving" instance=ExtResource("5_epr1s")]
+
+[node name="extradetailslabel" type="Label" parent="CanvasLayer/hiddenwhilemoving"]
+offset_left = 286.0
+offset_top = 6.0
+offset_right = 396.0
+offset_bottom = 58.0
+text = "a = -2 m/s^2
+g = 9.81 m/s^2"
+script = ExtResource("6_61dx3")
+
+[node name="Button" type="Button" parent="CanvasLayer/hiddenwhilemoving"]
+offset_left = 673.0
+offset_top = 6.0
+offset_right = 809.0
+offset_bottom = 142.0
+scale = Vector2(0.3, 0.3)
+tooltip_text = "Click for help
+
+"
+icon = ExtResource("7_s6evp")
+flat = true
+script = ExtResource("8_s3jsi")
+
+[node name="help" type="ColorRect" parent="CanvasLayer/hiddenwhilemoving"]
+offset_left = 150.0
+offset_top = 54.0
+offset_right = 563.0
+offset_bottom = 431.0
+color = Color(0, 0, 0, 0.827451)
+script = ExtResource("9_d1dt5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/hiddenwhilemoving/help"]
+layout_mode = 0
+offset_left = -39.0
+offset_top = -1.0
+offset_right = 459.0
+offset_bottom = 371.0
+bbcode_enabled = true
+text = "[center]Help menu
+
+[center] Physics Help
+[font_size=10]
+To find the x-position you need to reach, first find the initial 
+velocity at the bottom of the slope using conservation of energy equations:
+
+mgh = PE = KE = 1/2m(v^2)
+
+Then find the x-offset with the kinematic equation
+
+vf^2 = vi^2 + 2aΔx
+[/font_size]
+Gameplay Help
+[font_size=10]
+Manipulate the text field or top slider to influence the height value of the slope.
+
+Manipulate the bottom slider to zoom in or out.
+
+Press [A] to reset position once you've stopped.
+
+
+[X key to exit this menu]"
+
+[node name="VSlider" type="VSlider" parent="CanvasLayer"]
+offset_left = 691.0
+offset_top = 305.0
+offset_right = 707.0
+offset_bottom = 462.0
+tooltip_text = "Zoom in and out
+"
+min_value = 0.01
+max_value = 0.75
+step = 0.01
+value = 0.7
+
+[node name="gameendmenu" type="ColorRect" parent="CanvasLayer"]
+offset_left = 231.0
+offset_top = 184.0
+offset_right = 488.0
+offset_bottom = 294.0
+color = Color(0.00392157, 0.0352941, 0.027451, 0.85098)
+script = ExtResource("10_kxqju")
+
+[node name="wincon" type="Label" parent="CanvasLayer/gameendmenu"]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 257.0
+offset_bottom = 30.0
+horizontal_alignment = 1
+script = ExtResource("11_5w60s")
+
+[node name="offset" type="Label" parent="CanvasLayer/gameendmenu"]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 256.0
+offset_bottom = 65.0
+horizontal_alignment = 1
+script = ExtResource("12_t50sm")
+
+[node name="tryagain" type="Label" parent="CanvasLayer/gameendmenu"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 86.0
+offset_right = 196.0
+offset_bottom = 112.0
+scale = Vector2(0.75, 0.75)
+text = "[A] to try again"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/hiddenwhilemoving/Button" to="CanvasLayer/hiddenwhilemoving/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/hiddenwhilemoving/Button" to="CanvasLayer/hiddenwhilemoving/help" method="_on_button_pressed"]
