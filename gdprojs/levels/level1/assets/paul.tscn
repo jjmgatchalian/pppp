@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj8u00w4a1r6h"]
 
-[ext_resource type="Script" path="res://levels/level1/assets/paul.gd" id="1_r6qqq"]
+[ext_resource type="Script" uid="uid://dqsyxyrbtiklj" path="res://levels/level1/assets/paul.gd" id="1_r6qqq"]
 [ext_resource type="Texture2D" uid="uid://b36thts4f7yyi" path="res://levels/level1/assets/icon.svg" id="2_er3fj"]
-[ext_resource type="Script" path="res://levels/level1/assets/Sprite2D.gd" id="3_7vslv"]
-[ext_resource type="Script" path="res://levels/level1/assets/Camera2D.gd" id="4_8ieaa"]
+[ext_resource type="Script" uid="uid://dc8hv36gj74hq" path="res://levels/level1/assets/Sprite2D.gd" id="3_7vslv"]
+[ext_resource type="Script" uid="uid://dm7xu3ci0h6xr" path="res://levels/level1/assets/Camera2D.gd" id="4_8ieaa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jcict"]
 radius = 42.0

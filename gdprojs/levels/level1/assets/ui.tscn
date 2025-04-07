@@ -1,17 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://d3i2wyjfkkrqm"]
 
-[ext_resource type="Script" path="res://levels/level1/assets/targetposnlabel.gd" id="1_iggix"]
-[ext_resource type="Script" path="res://levels/level1/assets/Label.gd" id="2_bq3nt"]
-[ext_resource type="Script" path="res://levels/level1/assets/positionlabel.gd" id="3_wefp6"]
-[ext_resource type="Script" path="res://levels/level1/assets/hiddenwhilemoving.gd" id="4_578ul"]
+[ext_resource type="Script" uid="uid://bewq04w4lxj1t" path="res://levels/level1/assets/targetposnlabel.gd" id="1_iggix"]
+[ext_resource type="Script" uid="uid://c68ir0rmf8nk" path="res://levels/level1/assets/Label.gd" id="2_bq3nt"]
+[ext_resource type="Script" uid="uid://g4ao3v7g7uws" path="res://levels/level1/assets/positionlabel.gd" id="3_wefp6"]
+[ext_resource type="Script" uid="uid://b3oycxnq6dev3" path="res://levels/level1/assets/hiddenwhilemoving.gd" id="4_578ul"]
 [ext_resource type="PackedScene" uid="uid://rxx05311txso" path="res://levels/level1/assets/slidersprite.tscn" id="5_epr1s"]
-[ext_resource type="Script" path="res://levels/level1/assets/extradetailslabel.gd" id="6_61dx3"]
+[ext_resource type="Script" uid="uid://baa06s13h5wk1" path="res://levels/level1/assets/extradetailslabel.gd" id="6_61dx3"]
 [ext_resource type="Texture2D" uid="uid://b36thts4f7yyi" path="res://levels/level1/assets/icon.svg" id="7_s6evp"]
-[ext_resource type="Script" path="res://levels/level1/assets/Button.gd" id="8_s3jsi"]
-[ext_resource type="Script" path="res://levels/level1/assets/help.gd" id="9_d1dt5"]
-[ext_resource type="Script" path="res://levels/level1/assets/helpmenu.gd" id="10_kxqju"]
-[ext_resource type="Script" path="res://levels/level1/assets/wincon.gd" id="11_5w60s"]
-[ext_resource type="Script" path="res://levels/level1/assets/winstate.gd" id="12_t50sm"]
+[ext_resource type="Script" uid="uid://ef7dpatdpajo" path="res://levels/level1/assets/Button.gd" id="8_s3jsi"]
+[ext_resource type="Script" uid="uid://qidavncxn7c1" path="res://levels/level1/assets/help.gd" id="9_d1dt5"]
+[ext_resource type="Script" uid="uid://b55ypo6q1x83x" path="res://levels/level1/assets/helpmenu.gd" id="10_kxqju"]
+[ext_resource type="Script" uid="uid://doo3he8qrnncw" path="res://levels/level1/assets/wincon.gd" id="11_5w60s"]
+[ext_resource type="Script" uid="uid://drql1l2altk8y" path="res://levels/level1/assets/winstate.gd" id="12_t50sm"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -117,7 +117,7 @@ Manipulate the bottom slider to zoom in or out.
 Press [A] to reset position once you've stopped.
 
 
-[X key to exit this menu]"
+[Click button again to exit this menu]"
 
 [node name="VSlider" type="VSlider" parent="CanvasLayer"]
 offset_left = 691.0

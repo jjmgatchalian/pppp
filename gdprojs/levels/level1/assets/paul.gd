@@ -20,6 +20,7 @@ var mass = 22500
 #@onready var slider = $slidersprite/HSlider
 
 func _physics_process(delta):
+	print(velocity.x)
 	var semipaused = get_node(path + "/UI/CanvasLayer/hiddenwhilemoving/help").get("shown")
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -32,7 +33,7 @@ func _physics_process(delta):
 		position.y = (-height)
 		position.x = (-height) - 1*ppm
 		#position.x = SCENARIO1BASEPOSITION
-		playervelocity = sqrt((gravity*height)/2)
+		playervelocity = sqrt((gravity*height)*2)
 		
 	if Input.is_key_pressed(KEY_A) and not semipaused and motionstatus == "stopped":
 		get_node(path + "/paul").position = Vector2(SCENARIO1BASEPOSITION, -286)
@@ -48,7 +49,7 @@ func _physics_process(delta):
 		if get_floor_angle() != 0:
 			motionstatus = "onslope"
 	if motionstatus == "onslope":
-		velocity.x = move_toward(velocity.x, playervelocity, (position.y+22)/(0.275*position.y))
+		velocity.x = move_toward(velocity.x, playervelocity, (position.y+22)/(0.075*position.y))
 		if position.x >= 0:
 			position.x = 0
 			motionstatus = "moving"
