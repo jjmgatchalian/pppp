@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu17ahguiobso"]
+
+[ext_resource type="Script" uid="uid://gv3qld0mu5ea" path="res://levels/level4/assets/slidersprite.gd" id="1_06q0p"]
+[ext_resource type="Script" uid="uid://csh5pf7wts8m2" path="res://levels/level4/assets/slider.gd" id="2_bo4v0"]
+[ext_resource type="Script" uid="uid://blg0s87iibxcl" path="res://levels/level4/assets/SpinBox.gd" id="3_jvlv4"]
+
+[node name="slidersprite" type="Sprite2D"]
+script = ExtResource("1_06q0p")
+
+[node name="HSlider" type="HSlider" parent="."]
+anchors_preset = -1
+anchor_right = 167.925
+anchor_bottom = 16.0
+offset_left = 99.0
+offset_top = 13.0
+offset_right = 100.075
+offset_bottom = 13.0
+tooltip_text = "Adjust the height value via slider"
+min_value = 7000.0
+max_value = 28000.0
+value = 7000.0
+tick_count = 9
+script = ExtResource("2_bo4v0")
+
+[node name="SpinBox" type="SpinBox" parent="."]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 91.0625
+offset_bottom = 37.0
+tooltip_text = "Adjust the height value manually
+
+"
+min_value = 7000.0
+max_value = 28000.0
+value = 7000.0
+script = ExtResource("3_jvlv4")
+
+[connection signal="value_changed" from="HSlider" to="SpinBox" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="SpinBox" to="HSlider" method="_on_spin_box_value_changed"]
